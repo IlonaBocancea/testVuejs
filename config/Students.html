@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Students</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
+</head>
+<body>
+<div>
+    <div id="app">
+        <v-app id="inspire">
+            <v-layout row>
+                <v-flex xs12 sm6 offset-sm3>
+                    <v-card>
+                        <v-toolbar color="cyan" dark>
+
+                            <v-toolbar-title>Lista Studentilor</v-toolbar-title>
+
+                            <v-spacer></v-spacer>
+                        </v-toolbar>
+
+                        <v-list two-line>
+                            <template v-for="(item, index) in items">
+                                <v-subheader
+                                        v-if="item.header"
+                                        :key="item.header"
+                                >
+                                </v-subheader>
+                                <v-divider
+                                        v-else-if="item.divider"
+                                        :key="index"
+                                        :inset="item.inset"
+                                ></v-divider>
+
+                                <v-list-tile
+                                        v-else
+                                        :key="item.title"
+                                        avatar
+                                        @click=""
+                                >
+
+                                    <v-list-tile-content>
+                                        <v-list-tile-nume_prenume-nume_prenume v-html="item.nume_prenume"></v-list-tile-nume_prenume-nume_prenume>
+                                        <v-list-nume_prenume-media v-html="item.media"></v-list-nume_prenume-media>
+                                    </v-list-tile-content>
+
+                                </v-list-tile>
+                            </template>
+                        </v-list>
+                    </v-card>
+                </v-flex>
+            </v-layout>
+        </v-app>
+    </div>
+
+</body>
+</html>

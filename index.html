@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>proect</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
+  </head>
+  <body>
+  <div>
+    <div id="app">
+      <v-app id="inspire">
+        <div class="text-xs-center">
+          <v-menu offset-y>
+            <template v-slot:activator="{ on }">
+              <v-btn
+                      color="primary"
+                      dark
+                      v-on="on"
+              >
+               Meniu
+              </v-btn>
+            </template>
+            <v-list>
+              <v-list-tile
+                      v-for="(item, index) in items"
+                      :key="index"
+                      @click=""
+              >
+                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              </v-list-tile>
+            </v-list>
+          </v-menu>
+        </div>
+      </v-app>
+    </div>
+
+  </body>
+</html>
